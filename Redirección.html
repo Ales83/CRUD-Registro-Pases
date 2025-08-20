@@ -1,0 +1,10 @@
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userEmail = sessionStorage.getItem("userEmail");
+  if (!userEmail) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('page', 'login');
+    window.top.location.href = url.toString();
+  }
+});
+</script>
