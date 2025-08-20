@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+
+<style>
+  body {
+    background-size: cover;
+    color: #333;
+  }
+  .card-bg {
+    background-color: rgba(255,255,255,0.50);
+    border: 1px solid #d1d1d1;
+    border-radius: .5rem;
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.1);
+    padding: 2rem;
+  }
+  h4 {
+    color: #9b1c31;
+    font-weight: 600;
+  }
+  .btn-theme {
+    background-color: #9b1c31;
+    border-color: #9b1c31;
+    color: white;
+  }
+  .btn-theme:hover {
+    background-color: #7d1525;
+    border-color: #7d1525;
+  }
+  .btn-custom {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* La tabla no crecerá indefinidamente */
+  .table-wrap {
+    overflow-x: auto;        /* scroll horizontal si hace falta */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fijar el layout para que respete anchos y trunque bien */
+  .table-fixed {
+    table-layout: fixed;
+    width: auto;
+  }
+
+  /* Celdas: permitir ruptura de palabras y truncado */
+  .break-anywhere {
+    overflow-wrap: anywhere; /* rompe palabras largas */
+    word-break: break-word;
+    white-space: normal;     /* NO forzar nowrap */
+  }
+
+  /* Columnas compactas para iconos/acciones */
+  .col-actions {
+    width: 96px;   /* borrar + editar */
+    white-space: nowrap;
+  }
+
+  /* Columnas que suelen ser largas: limitar visualmente */
+  .col-funcion, .col-unidad {
+    max-width: 280px;  /* ajusta a tu gusto */
+  }
+
+  /* Columnas que suelen ser largas: limitar visualmente */
+  .col-observ, .col-nombre {
+    min-width: 320px;   /* asegura un ancho mínimo */
+    max-width: 600px;   /* evita que sea demasiado ancha */
+  }
+
+  /* Opcional: hacer la header sticky si la tabla es alta */
+  .table thead th {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,.95);
+    z-index: 1;
+  }
+
+  .truncate {
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
