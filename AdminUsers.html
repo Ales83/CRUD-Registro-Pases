@@ -1,0 +1,49 @@
+<div class="card-bg mx-auto mt-4" style="max-width: 900px;">
+  <h4 class="text-center mb-3">Administración de Usuarios</h4>
+  <div class="d-flex gap-2 mb-3">
+    <button class="btn btn-theme" onclick="loadUsers()">Actualizar lista</button>
+  </div>
+  <div id="usersTable"></div>
+</div>
+
+<script>
+function loadUsers(){
+  google.script.run.withSuccessHandler(renderUsers).listUsers();
+}
+
+function renderUsers(users){
+  if (!users || !users.length) {
+    document.getElementById('usersTable').innerHTML = "<div class='alert alert-warning'>Sin usuarios</div>";
+    return;
+  }
+  let html = `<table class="table table-sm table-striped">
+    <thead><tr>
+      <th>Email</th><th>Nombre</th><th>Rol</th><th>Habilitado</th><th>Creado</th><th>Último acceso</th><th>Acción</th>
+    </tr></thead><tbody>`;
+  users.forEach(u => {
+    html += `<tr>
+      <td>${u.email||""}</td>
+      <td>${u.name||""}</td>
+      <td>${u.role||""}</td>
+      <td>${u.enabled ? 'Sí' : 'No'}</td>
+      <td>${u.created_at||""}</td>
+      <td>${u.last_login||""}</td>
+      <td>
+        <button class="btn btn-sm ${u.enabled ? 'btn-danger' : 'btn-success'}"
+          onclick="toggleUser('${u.email}', ${!u.enabled})">
+          ${u.enabled ? 'Deshabilitar' : 'Habilitar'}
+        </button>
+      </td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  document.getElementById('usersTable').innerHTML = html;
+}
+
+function toggleUser(email, enable) {
+  google.script.run.withSuccessHandler(res => {
+    alert(res.msg || 'Listo');
+    loadUsers();
+  }).setUserEnabled(email, enable);
+}
+</script>
