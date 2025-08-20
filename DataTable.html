@@ -1,0 +1,26 @@
+<div class="card-bg mx-auto mt-4" style="max-width: 1200px;">
+  <h4 class="text-center mb-4">Registros recientes</h4>
+
+  <!-- 🔎 Formulario de búsqueda -->
+  <form id="search-form" onsubmit="handleSearchForm(this); return false;" class="mb-2">
+    <div class="input-group">
+      <input type="text" name="searchText" class="form-control" placeholder="Buscar por cualquier campo" required>
+      <button type="submit" class="btn btn-theme">Buscar</button>
+      <button type="button" class="btn btn-secondary" onclick="getAllRecords()">Ver todos</button>
+    </div>
+  </form>
+
+  <!-- Mensajes -->
+  <div id="message"></div>
+
+  <!-- Aquí se renderiza la tabla -->
+   <!-- 👇 envoltura para permitir scroll horizontal si hace falta -->
+  <div class="table-wrap">
+    <div id="dataTable"></div>
+  </div>
+
+  <!-- Contador -->
+  <div class="text-end mt-2">
+    <small>Total registros mostrados: <span id="resultados">0</span></small>
+  </div>
+</div>
