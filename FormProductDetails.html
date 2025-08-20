@@ -1,0 +1,135 @@
+<div class="card-bg mx-auto" style="max-width: 900px;">
+  <h4 class="text-center mb-4">Ingreso de Requerimientos</h4>
+
+    <form id="ProductDetails" onsubmit="handleFormSubmit(this)">
+      <input type="hidden" id="recId" name="recId">
+
+      <!-- Fila 1 -->
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <label for="proceso" class="form-label">Proceso</label>
+          <input type="text" id="proceso" name="proceso"
+                 class="form-control" value="Rectificaciones 2025" readonly required>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="tipoPMP" class="form-label">Tipo PMP</label>
+          <select id="tipoPMP" name="tipoPMP" class="form-select">
+            <option value="O" selected>Oficial</option>
+            <option value="V">Voluntario</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="gradoMilitar" class="form-label">Grado</label>
+          <select id="gradoMilitar" name="gradoMilitar" class="form-select">
+            <option value="">--Selecc Grado--</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fila 2 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-md-4">
+          <label for="unidad" class="form-label">Unidad</label>
+          <select id="unidad" name="unidad" class="form-select" required>
+            <option value="">--Selecc Unidad--</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-8">
+          <label for="funcion" class="form-label">Función</label>
+          <input type="text" id="funcion" name="funcion" class="form-control">
+        </div>
+      </div>
+
+      <!-- Campo de búsqueda -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-md-4">
+          <label for="buscarMilitar" class="form-label">Nombre o Cédula</label>
+          <div class="input-group">
+            <input type="text" id="buscarMilitar" class="form-control"
+                  placeholder="Nombre o cédula">
+            <button type="button" id="btnBuscar" class="btn btn-secondary" onclick="">
+              Buscar
+            </button>
+          </div>
+        </div>
+      
+      <!-- Campo nuevo para tiempo en la unidad -->
+        <div class="col-12 col-md-8">
+          <label for="tiempo_unidad" class="form-label">Tiempo en la unidad</label>
+          <input type="text" id="tiempo_unidad" name="tiempo_unidad"
+                class="form-control" readonly>
+        </div>
+      </div>
+
+      <!-- Fila 3 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-md-4">
+          <label for="documento" class="form-label">Documento</label>
+          <input type="text" id="documento" name="documento" class="form-control" required>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="fecha_doc" class="form-label">Fecha</label>
+          <input type="date" id="fecha_doc" name="fecha_doc" class="form-control">
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="autoridad" class="form-label">Autoridad</label>
+          <input type="text" id="autoridad" name="autoridad" class="form-control">
+        </div>
+      </div>
+
+      <!-- Fila 4 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-md-4">
+          <label for="sexo" class="form-label">Sexo</label>
+          <select id="sexo" name="sexo" class="form-select">
+            <option value="N_D" selected>No determina</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="Varios">Varios</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="nombre_req" class="form-label">Nombre</label>
+          <input type="text" id="nombre_req" name="nombre_req" class="form-control">
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="clasificacion" class="form-label">Clasificación</label>
+          <select id="clasificacion" name="clasificacion" class="form-select">
+            <option value="">--Seleccione un Tipo--</option>
+            <option value="Arma">Arma</option>
+            <option value="Servicio">Servicio</option>
+            <option value="Especialista">Especialista</option>
+            <option value="Varios">Varios</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fila 5 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-md-4">
+          <label for="cantidadPMP" class="form-label">Cantidad PMP</label>
+          <input type="number" id="cantidadPMP" name="cantidadPMP" class="form-control" value="1">
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="estado" class="form-label">Estado</label>
+          <select id="estado" name="estado" class="form-select">
+            <option value="">--Seleccione un Tipo--</option>
+            <option value="Autorizado">Autorizado</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Negado">Negado</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="observ_justif" class="form-label">Observación / Justificación</label>
+          <textarea id="observ_justif" name="observ_justif" class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Botón -->
+      <div class="row mt-4">
+        <div class="col text-center">
+          <button type="submit" class="btn btn-theme px-5">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
