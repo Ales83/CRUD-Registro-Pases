@@ -13,7 +13,7 @@
           sessionStorage.setItem('userEmail', res.user.email || '');
           const url = new URL(window.location.href);
           url.searchParams.set('page', 'index');
-          windows.top.location.href = url.toString();
+          window.top.location.href = url.toString();
         } else {
           alert(res?.msg || "Usuario o contraseña incorrectos");
         }
